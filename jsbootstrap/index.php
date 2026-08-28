@@ -175,72 +175,15 @@ include "koneksi.php";
 
     <div class="chart-line"></div>
 
-    <div class="chart">
+    <div class="chart" id="skillChart">
 
-        <?php
-
-        $query = mysqli_query($conn, "
-            SELECT 
-                keahlian.nama,
-                tingkat_keahlian.keahlian_id,
-                tingkat_keahlian.presentase
-            FROM tingkat_keahlian
-            INNER JOIN keahlian 
-                ON tingkat_keahlian.keahlian_id = keahlian.id
-            ORDER BY tingkat_keahlian.keahlian_id ASC
-        ");
-
-        while ($data = mysqli_fetch_assoc($query)) {
-
-            // Menentukan class warna berdasarkan keahlian
-            if ($data['keahlian_id'] == 1) {
-                $bar_class = "programming-bar";
-            } elseif ($data['keahlian_id'] == 2) {
-                $bar_class = "automation-bar";
-            } else {
-                $bar_class = "robotics-bar";
-            }
-
-        ?>
-
-            <div class="chart-row">
-
-                <div class="chart-label">
-                    <?php echo $data['nama']; ?>
-                </div>
-
-                <div class="chart-area">
-
-                    <div 
-                        class="chart-bar <?php echo $bar_class; ?>"
-                        style="width: <?php echo $data['presentase']; ?>%;"
-                    >
-                        <span>
-                            <?php echo $data['presentase']; ?>%
-                        </span>
-                    </div>
-
-                </div>
-
-            </div>
-
-        <?php
-
-        }
-
-        ?>
-
-
-        <!-- ANGKA GRAFIK -->
         <div class="chart-scale">
-
             <span>0</span>
             <span>20</span>
             <span>40</span>
             <span>60</span>
             <span>80</span>
             <span>100</span>
-
         </div>
 
         <p class="chart-axis">
@@ -593,6 +536,83 @@ include "koneksi.php";
 
     <!-- Bootstrap JS -->
     <script src="js/bootstrap.bundle.min.js"></script>
+
+    <script>
+
+function loadChart() {
+
+    fetch("get_keahlian.php")
+        .then(response => response.json())
+        .then(data => {
+
+            const chart = document.getElementById("skillChart");
+
+            let html = "";
+
+            data.forEach(item => {
+
+                let barClass = "";
+
+                if (item.keahlian_id == 1) {
+                    barClass = "programming-bar";
+                } else if (item.keahlian_id == 2) {
+                    barClass = "automation-bar";
+                } else {
+                    barClass = "robotics-bar";
+                }
+
+                html += `
+                    <div class="chart-row">
+
+                        <div class="chart-label">
+                            ${item.nama}
+                        </div>
+
+                        <div class="chart-area">
+
+                            <div class="chart-bar ${barClass}"
+                                 style="width: ${item.presentase}%">
+
+                                <span>${item.presentase}%</span>
+
+                            </div>
+
+                        </div>
+
+                    </div>
+                `;
+
+            });
+
+            html += `
+                <div class="chart-scale">
+                    <span>0</span>
+                    <span>20</span>
+                    <span>40</span>
+                    <span>60</span>
+                    <span>80</span>
+                    <span>100</span>
+                </div>
+
+                <p class="chart-axis">
+                    Presentase (%)
+                </p>
+            `;
+
+            chart.innerHTML = html;
+
+        })
+        .catch(error => {
+            console.error("Gagal mengambil data:", error);
+        });
+
+}
+
+loadChart();
+
+setInterval(loadChart, 1000);
+
+</script>
 
 </body>
 
