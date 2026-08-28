@@ -1,0 +1,2207 @@
+/* =========================================
+   GLOBAL
+========================================= */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    color: #333;
+    background-color: #ffffff;
+}
+
+
+/* =========================================
+   HEADER
+========================================= */
+
+.header {
+    background-color: #ffe5c7;
+    border: 1px solid #e5b15c;
+    min-height: 60px;
+}
+
+.navbar-custom {
+    height: 60px;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+
+/* =========================================
+   LOGO
+========================================= */
+
+.logo {
+    width: 46px;
+    height: 46px;
+
+    border: 1px solid #555;
+    border-radius: 50%;
+
+    background-color: white;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    overflow: hidden;
+
+    flex-shrink: 0;
+}
+
+.logo img {
+    width: 100%;
+    height: 100%;
+
+    object-fit: cover;
+
+    display: block;
+}
+
+/* =========================================
+   NAVIGATION
+========================================= */
+
+.nav-menu {
+    display: flex;
+    align-items: center;
+    gap: 25px;
+}
+
+.nav-menu a {
+    text-decoration: none;
+    color: #333;
+
+    font-size: 13px;
+
+    transition: 0.3s;
+}
+
+.nav-menu a:hover {
+    color: #943dac;
+}
+
+
+/* =========================================
+   HERO
+========================================= */
+
+.hero {
+    position: relative;
+
+    min-height: 575px;
+
+    background-color: #d8e7ff;
+
+    border-left: 1px solid #a06aca;
+    border-right: 1px solid #734ca4;
+
+    display: flex;
+    align-items: center;
+
+    overflow: hidden;
+}
+
+
+/* =========================================
+   HERO CONTENT
+========================================= */
+
+.hero-content {
+
+    min-height: 575px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    gap: 75px;
+
+    padding: 50px 40px;
+
+    position: relative;
+
+    z-index: 2;
+}
+
+
+/* =========================================
+   FOTO HERO
+========================================= */
+
+.hero-image {
+
+    width: 350px;
+    height: 350px;
+
+    flex-shrink: 0;
+
+    position: relative;
+}
+
+
+.hero-image img {
+
+    width: 350px;
+    height: 350px;
+
+    object-fit: cover;
+
+    border-radius: 50%;
+
+    border: 7px solid #ffffff;
+
+    display: block;
+
+    box-shadow:
+        0 8px 20px rgba(0, 0, 0, 0.10);
+}
+
+
+/* =========================================
+   TEXT HERO
+========================================= */
+
+.hero-text {
+
+    max-width: 570px;
+
+    color: #222;
+}
+
+
+/* Judul */
+
+.hero-text h1 {
+
+    font-size: 42px;
+
+    line-height: 1.2;
+
+    font-weight: 700;
+
+    margin-bottom: 14px;
+}
+
+
+/* Nama berwarna biru */
+
+.hero-text h1 span {
+
+    color: #1769e8;
+}
+
+
+/* Subtitle */
+
+.hero-text h2 {
+
+    font-size: 25px;
+
+    font-weight: 400;
+
+    color: #222;
+
+    margin-bottom: 20px;
+}
+
+
+/* =========================================
+   GARIS BIRU
+========================================= */
+
+.hero-line {
+
+    width: 65px;
+
+    height: 3px;
+
+    background-color: #1769e8;
+
+    border-radius: 5px;
+
+    margin-bottom: 23px;
+}
+
+
+/* =========================================
+   DESKRIPSI
+========================================= */
+
+.hero-description {
+
+    font-size: 17px !important;
+
+    line-height: 1.7;
+
+    color: #555;
+
+    max-width: 550px;
+
+    margin-bottom: 28px;
+}
+
+
+/* =========================================
+   BUTTON
+========================================= */
+
+.btn-contact {
+
+    display: inline-flex;
+
+    align-items: center;
+
+    gap: 10px;
+
+    padding: 13px 22px;
+
+    background-color: #1769e8;
+
+    color: white;
+
+    text-decoration: none;
+
+    border-radius: 7px;
+
+    font-size: 16px;
+
+    box-shadow:
+        0 6px 14px rgba(23, 105, 232, 0.25);
+
+    transition: 0.3s;
+}
+
+
+.btn-contact:hover {
+
+    background-color: #0957ce;
+
+    color: white;
+
+    transform: translateY(-2px);
+
+}
+
+
+.button-icon {
+
+    font-size: 17px;
+}
+
+
+/* =========================================
+   POLA TITIK
+========================================= */
+
+.dot-pattern {
+
+    position: absolute;
+
+    width: 120px;
+    height: 120px;
+
+    opacity: 0.35;
+
+    background-image:
+        radial-gradient(
+            circle,
+            #72a0eb 3px,
+            transparent 3px
+        );
+
+    background-size: 20px 20px;
+
+    z-index: 1;
+}
+
+
+/* Titik kiri atas */
+
+.dot-left {
+
+    left: 55px;
+
+    top: 85px;
+}
+
+
+/* Titik kanan bawah */
+
+.dot-right {
+
+    right: 55px;
+
+    bottom: 65px;
+}
+
+
+/* =========================================
+   LINGKARAN DEKORASI
+========================================= */
+
+.hero::before {
+
+    content: "";
+
+    position: absolute;
+
+    width: 310px;
+    height: 310px;
+
+    left: -150px;
+    bottom: -160px;
+
+    border-radius: 50%;
+
+    background-color:
+        rgba(104, 149, 230, 0.18);
+}
+
+
+.hero::after {
+
+    content: "";
+
+    position: absolute;
+
+    width: 280px;
+    height: 280px;
+
+    right: -120px;
+    top: -145px;
+
+    border-radius: 50%;
+
+    background-color:
+        rgba(255, 255, 255, 0.25);
+}
+
+
+/* =========================================
+   RESPONSIVE
+========================================= */
+
+@media (max-width: 768px) {
+
+    .hero {
+
+        min-height: auto;
+    }
+
+
+    .hero-content {
+
+        min-height: auto;
+
+        flex-direction: column;
+
+        text-align: center;
+
+        gap: 40px;
+
+        padding: 60px 25px;
+    }
+
+
+    .hero-image {
+
+        width: 250px;
+        height: 250px;
+    }
+
+
+    .hero-image img {
+
+        width: 250px;
+        height: 250px;
+    }
+
+
+    .hero-text {
+
+        max-width: 100%;
+    }
+
+
+    .hero-text h1 {
+
+        font-size: 30px;
+    }
+
+
+    .hero-text h2 {
+
+        font-size: 20px;
+    }
+
+
+    .hero-line {
+
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+
+    .hero-description {
+
+        font-size: 14px !important;
+    }
+
+
+    .dot-left {
+
+        left: 15px;
+
+        top: 30px;
+    }
+
+
+    .dot-right {
+
+        right: 15px;
+
+        bottom: 20px;
+    }
+
+}
+
+/* =========================================
+   SERVICES / KEAHLIAN
+========================================= */
+
+/* =========================================
+   SERVICES / KEAHLIAN
+========================================= */
+
+.services {
+    padding: 70px 0;
+    background-color: #ffffff;
+}
+
+
+/* =========================================
+   WRAPPER
+========================================= */
+
+.skills-wrapper {
+    display: flex;
+    align-items: center;
+
+    gap: 60px;
+
+    width: 100%;
+}
+
+
+/* =========================================
+   BAGIAN KIRI
+========================================= */
+
+.skills-info {
+    width: 40%;
+}
+
+
+.skills-info h2 {
+    margin: 0 0 15px;
+
+    font-size: 32px;
+
+    font-weight: 500;
+
+    color: #333;
+}
+
+
+/* Garis biru */
+
+.skills-info h2::after {
+    content: "";
+
+    display: block;
+
+    width: 48px;
+    height: 3px;
+
+    margin-top: 12px;
+
+    background-color: #1769e8;
+
+    border-radius: 5px;
+}
+
+
+/* Deskripsi */
+
+.skills-description {
+    margin: 0 0 40px;
+
+    color: #666;
+
+    font-size: 15px;
+
+    line-height: 1.7;
+}
+
+
+/* =========================================
+   ITEM KEAHLIAN
+========================================= */
+
+.skill-item {
+    display: flex;
+
+    align-items: flex-start;
+
+    gap: 18px;
+
+    margin-bottom: 30px;
+}
+
+
+/* =========================================
+   ICON KEAHLIAN
+========================================= */
+
+.skill-icon {
+    width: 58px;
+    height: 58px;
+
+    min-width: 58px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    border-radius: 50%;
+
+    background-color: #e5efff;
+
+    color: #1769e8;
+
+    font-size: 26px;
+}
+
+
+/* =========================================
+   TEKS KEAHLIAN
+========================================= */
+
+.skill-text {
+    flex: 1;
+}
+
+
+.skill-text h3 {
+    margin: 3px 0 7px;
+
+    font-size: 19px;
+
+    font-weight: 600;
+
+    color: #1769e8;
+}
+
+
+.skill-text p {
+    margin: 0;
+
+    font-size: 14px;
+
+    line-height: 1.6;
+
+    color: #555;
+}
+
+
+/* =========================================
+   BAGIAN KANAN / GRAFIK
+========================================= */
+
+.skills-chart {
+    width: 60%;
+
+    padding: 35px 40px;
+
+    background-color: #ffffff;
+
+    border: 1px solid #e1e7f2;
+
+    border-radius: 14px;
+
+    box-shadow:
+        0 5px 20px rgba(40, 70, 120, 0.08);
+}
+
+
+/* Judul grafik */
+
+.skills-chart h3 {
+    margin: 0;
+
+    text-align: center;
+
+    font-size: 22px;
+
+    font-weight: 600;
+
+    color: #222;
+}
+
+
+/* Garis bawah judul */
+
+.chart-line {
+    width: 55px;
+
+    height: 3px;
+
+    margin: 12px auto 35px;
+
+    background-color: #1769e8;
+
+    border-radius: 5px;
+}
+
+
+/* =========================================
+   GRAFIK
+========================================= */
+
+.chart {
+    width: 100%;
+}
+
+
+/* Setiap baris */
+
+.chart-row {
+    display: flex;
+
+    align-items: center;
+
+    margin-bottom: 28px;
+}
+
+
+/* Label kiri grafik */
+
+.chart-label {
+    width: 145px;
+
+    min-width: 145px;
+
+    padding-right: 15px;
+
+    text-align: right;
+
+    font-size: 14px;
+
+    color: #444;
+}
+
+
+/* Area grafik */
+
+.chart-area {
+    position: relative;
+
+    width: 100%;
+
+    height: 42px;
+
+    display: flex;
+
+    align-items: center;
+
+    background-color: #edf2fa;
+
+    border-radius: 5px;
+
+    overflow: visible;
+}
+
+
+/* Bar */
+
+.chart-bar {
+    height: 42px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: flex-end;
+
+    padding-right: 12px;
+
+    border-radius: 5px;
+
+    color: white;
+
+    font-size: 13px;
+
+    font-weight: 600;
+
+    transition: all 0.4s ease;
+}
+
+
+/* Hover */
+
+.chart-bar:hover {
+    transform: scaleY(1.08);
+}
+
+
+/* =========================================
+   PANJANG BAR
+========================================= */
+
+.programming-bar {
+    width: 70%;
+
+    background-color: #1769e8;
+}
+
+
+.automation-bar {
+    width: 80%;
+
+    background-color: #7042d8;
+}
+
+
+.robotics-bar {
+    width: 75%;
+
+    background-color: #4b4ce6;
+}
+
+
+/* =========================================
+   SKALA GRAFIK
+========================================= */
+
+.chart-scale {
+    display: flex;
+
+    justify-content: space-between;
+
+    margin-left: 145px;
+
+    margin-top: -10px;
+
+    font-size: 12px;
+
+    color: #777;
+}
+
+
+/* Label sumbu */
+
+.chart-axis {
+    margin: 22px 0 0;
+
+    text-align: center;
+
+    font-size: 13px;
+
+    color: #555;
+}
+
+
+/* =========================================
+   RESPONSIVE
+========================================= */
+
+@media (max-width: 992px) {
+
+    .skills-wrapper {
+        flex-direction: column;
+
+        gap: 40px;
+    }
+
+
+    .skills-info,
+    .skills-chart {
+        width: 100%;
+    }
+
+}
+
+
+@media (max-width: 768px) {
+
+    .services {
+        padding: 60px 20px;
+    }
+
+
+    .skills-info h2 {
+        font-size: 28px;
+    }
+
+
+    .skill-item {
+        margin-bottom: 25px;
+    }
+
+
+    .skills-chart {
+        padding: 25px 20px;
+    }
+
+
+    .skills-chart h3 {
+        font-size: 19px;
+    }
+
+
+    .chart-label {
+        width: 120px;
+
+        min-width: 120px;
+
+        font-size: 12px;
+    }
+
+
+    .chart-scale {
+        margin-left: 120px;
+    }
+
+}
+
+
+@media (max-width: 500px) {
+
+    .chart-row {
+        display: block;
+
+        margin-bottom: 25px;
+    }
+
+
+    .chart-label {
+        width: 100%;
+
+        min-width: 100%;
+
+        padding: 0;
+
+        margin-bottom: 8px;
+
+        text-align: left;
+    }
+
+
+    .chart-scale {
+        margin-left: 0;
+    }
+
+}
+
+/* =========================================
+   ABOUT
+========================================= */
+
+/* ============================= */
+/* RIWAYAT SEKOLAH */
+/* ============================= */
+
+.about {
+    padding: 70px 0;
+
+    background-color: #f8f9fa;
+}
+
+
+/* Judul */
+.school-title {
+    text-align: center;
+
+    margin-bottom: 55px;
+}
+
+.school-title h2 {
+    margin: 0;
+
+    font-size: 32px;
+
+    font-weight: 500;
+
+    color: #333;
+}
+
+
+/* Garis ungu di bawah judul */
+.title-line {
+    width: 70px;
+
+    height: 3px;
+
+    background-color: #6f42c1;
+
+    margin: 12px auto 0;
+
+    border-radius: 5px;
+}
+
+
+/* ============================= */
+/* BAGIAN SEKOLAH */
+/* ============================= */
+
+.school-list {
+    display: flex;
+
+    width: 100%;
+
+    align-items: stretch;
+}
+
+
+/* Setiap sekolah */
+.school-item {
+    flex: 1;
+
+    display: flex;
+
+    align-items: flex-start;
+
+    padding: 0 35px;
+
+    min-height: 220px;
+}
+
+
+/* Garis pemisah */
+.school-item + .school-item {
+    border-left: 1px solid #d9d9d9;
+}
+
+
+/* ============================= */
+/* ICON */
+/* ============================= */
+
+.school-icon {
+    width: 65px;
+
+    height: 65px;
+
+    min-width: 65px;
+
+    border-radius: 50%;
+
+    background-color: #eee7ff;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    font-size: 28px;
+
+    margin-right: 20px;
+}
+
+
+/* ============================= */
+/* INFORMASI SEKOLAH */
+/* ============================= */
+
+.school-content {
+    padding-top: 3px;
+}
+
+
+.school-content h3 {
+    margin: 0 0 12px;
+
+    font-size: 22px;
+
+    font-weight: 600;
+
+    color: #333;
+}
+
+
+.school-name {
+    margin: 0 0 8px;
+
+    font-size: 16px;
+
+    color: #444;
+
+    line-height: 1.5;
+}
+
+
+.school-year {
+    margin: 0 0 22px;
+
+    font-size: 14px;
+
+    color: #777;
+}
+
+
+/* ============================= */
+/* BUTTON LOKASI */
+/* ============================= */
+
+.location-btn {
+    display: inline-block;
+
+    padding: 8px 20px;
+
+    border: 1px solid #6f42c1;
+
+    border-radius: 6px;
+
+    background-color: transparent;
+
+    color: #6f42c1;
+
+    text-decoration: none;
+
+    font-size: 14px;
+
+    transition: all 0.3s ease;
+}
+
+
+.location-btn:hover {
+    background-color: #6f42c1;
+
+    color: white;
+
+    text-decoration: none;
+}
+
+
+/* ============================= */
+/* RESPONSIVE */
+/* ============================= */
+
+@media (max-width: 768px) {
+
+    .school-list {
+        display: block;
+    }
+
+
+    .school-item {
+        width: 100%;
+
+        padding: 25px 10px;
+
+        min-height: auto;
+    }
+
+
+    .school-item + .school-item {
+        border-left: none;
+
+        border-top: 1px solid #d9d9d9;
+    }
+
+
+    .school-title {
+        margin-bottom: 30px;
+    }
+
+}
+
+
+
+/* ================================= */
+/* CONTACT */
+/* ================================= */
+
+.contact {
+    padding: 80px 0;
+
+    background-color: #faf9ff;
+}
+
+
+/* ================================= */
+/* HEADER */
+/* ================================= */
+
+.contact-header {
+    text-align: center;
+
+    margin-bottom: 50px;
+}
+
+
+.contact-label {
+    display: inline-block;
+
+    margin-bottom: 15px;
+
+    color: #7042d8;
+
+    font-size: 14px;
+
+    font-weight: 600;
+
+    letter-spacing: 5px;
+}
+
+
+.contact-header h2 {
+    margin: 0;
+
+    color: #17172a;
+
+    font-size: 48px;
+
+    font-weight: 700;
+}
+
+
+.contact-line {
+    width: 70px;
+
+    height: 4px;
+
+    background-color: #7042d8;
+
+    border-radius: 10px;
+
+    margin: 18px auto 22px;
+}
+
+
+.contact-header > p {
+    margin: 0;
+
+    color: #62627a;
+
+    font-size: 17px;
+
+    line-height: 1.7;
+}
+
+
+/* ================================= */
+/* CONTENT */
+/* ================================= */
+
+.contact-content {
+    display: flex;
+
+    gap: 30px;
+
+    align-items: stretch;
+}
+
+
+/* ================================= */
+/* BAGIAN KIRI */
+/* ================================= */
+
+.contact-info {
+    width: 40%;
+
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 15px;
+}
+
+
+/* ================================= */
+/* CONTACT CARD */
+/* ================================= */
+
+.contact-card {
+    display: flex;
+
+    align-items: center;
+
+    position: relative;
+
+    padding: 24px;
+
+    min-height: 105px;
+
+    background-color: white;
+
+    border: 1px solid #eeeafa;
+
+    border-radius: 14px;
+
+    box-shadow: 0 5px 18px rgba(80, 60, 130, 0.07);
+
+    text-decoration: none;
+
+    transition: all 0.3s ease;
+}
+
+
+.contact-card:hover {
+    transform: translateY(-3px);
+
+    box-shadow: 0 10px 25px rgba(80, 60, 130, 0.12);
+
+    text-decoration: none;
+}
+
+
+/* ================================= */
+/* ICON */
+/* ================================= */
+
+.contact-icon {
+    width: 62px;
+
+    height: 62px;
+
+    min-width: 62px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    margin-right: 20px;
+
+    border-radius: 50%;
+
+    background-color: #f0eaff;
+
+    color: #7042d8;
+
+    font-size: 31px;
+}
+
+
+/* ================================= */
+/* TEXT CARD */
+/* ================================= */
+
+.contact-card-text {
+    flex: 1;
+}
+
+
+.contact-card-text h3 {
+    margin: 0 0 6px;
+
+    color: #17172a;
+
+    font-size: 19px;
+
+    font-weight: 600;
+}
+
+
+.contact-card-text p {
+    margin: 0;
+
+    color: #69697e;
+
+    font-size: 14px;
+}
+
+
+/* ================================= */
+/* ARROW */
+/* ================================= */
+
+.contact-arrow {
+    width: 28px;
+
+    height: 28px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    border-radius: 50%;
+
+    background-color: #d8c5ff;
+
+    color: #7042d8;
+
+    font-size: 24px;
+
+    font-weight: bold;
+}
+
+
+/* ================================= */
+/* NOTE */
+/* ================================= */
+
+.contact-note {
+    display: flex;
+
+    align-items: center;
+
+    padding: 20px 25px;
+
+    margin-top: 5px;
+
+    background-color: #f0eaff;
+
+    border-radius: 14px;
+}
+
+
+.quote {
+    color: #7042d8;
+
+    font-size: 60px;
+
+    font-weight: bold;
+
+    line-height: 1;
+
+    margin-right: 20px;
+}
+
+
+.contact-note p {
+    margin: 0;
+
+    color: #55556d;
+
+    font-size: 14px;
+
+    line-height: 1.7;
+}
+
+
+.contact-note strong {
+    color: #292944;
+}
+
+
+/* ================================= */
+/* FORM BOX */
+/* ================================= */
+
+.contact-form-box {
+    width: 60%;
+
+    padding: 35px 40px;
+
+    background-color: white;
+
+    border: 1px solid #eeeafa;
+
+    border-radius: 16px;
+
+    box-shadow: 0 5px 20px rgba(80, 60, 130, 0.07);
+}
+
+
+/* ================================= */
+/* FORM HEADER */
+/* ================================= */
+
+.form-heading {
+    display: flex;
+
+    align-items: center;
+
+    margin-bottom: 30px;
+}
+
+
+.form-icon {
+    width: 60px;
+
+    height: 60px;
+
+    min-width: 60px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    margin-right: 18px;
+
+    border-radius: 50%;
+
+    background-color: #f0eaff;
+
+    color: #7042d8;
+
+    font-size: 27px;
+}
+
+
+.form-heading h3 {
+    margin: 0 0 5px;
+
+    color: #17172a;
+
+    font-size: 23px;
+}
+
+
+.form-heading p {
+    margin: 0;
+
+    color: #6b6b80;
+
+    font-size: 14px;
+}
+
+
+/* ================================= */
+/* FORM */
+/* ================================= */
+
+.form-group {
+    margin-bottom: 20px;
+}
+
+
+.form-group label {
+    display: block;
+
+    margin-bottom: 8px;
+
+    color: #292944;
+
+    font-size: 15px;
+
+    font-weight: 500;
+}
+
+
+.form-group input,
+.form-group textarea {
+    width: 100%;
+
+    box-sizing: border-box;
+
+    padding: 14px 16px;
+
+    border: 1px solid #dedde7;
+
+    border-radius: 9px;
+
+    outline: none;
+
+    background-color: white;
+
+    color: #333;
+
+    font-family: inherit;
+
+    font-size: 14px;
+
+    transition: 0.3s;
+}
+
+
+.form-group input {
+    height: 52px;
+}
+
+
+.form-group textarea {
+    height: 130px;
+
+    resize: vertical;
+}
+
+
+.form-group input:focus,
+.form-group textarea:focus {
+    border-color: #7042d8;
+
+    box-shadow: 0 0 0 3px rgba(112, 66, 216, 0.08);
+}
+
+
+.form-group input::placeholder,
+.form-group textarea::placeholder {
+    color: #9999aa;
+}
+
+
+/* ================================= */
+/* SEND BUTTON */
+/* ================================= */
+
+.send-button {
+    width: 100%;
+
+    height: 55px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    gap: 10px;
+
+    border: none;
+
+    border-radius: 9px;
+
+    background-color: #7042d8;
+
+    color: white;
+
+    font-family: inherit;
+
+    font-size: 16px;
+
+    font-weight: 600;
+
+    cursor: pointer;
+
+    transition: 0.3s;
+}
+
+
+.send-button:hover {
+    background-color: #5d31bd;
+
+    transform: translateY(-2px);
+
+    box-shadow: 0 7px 15px rgba(112, 66, 216, 0.2);
+}
+
+
+/* ================================= */
+/* RESPONSIVE */
+/* ================================= */
+
+@media (max-width: 768px) {
+
+    .contact {
+        padding: 60px 0;
+    }
+
+
+    .contact-header h2 {
+        font-size: 36px;
+    }
+
+
+    .contact-header > p {
+        font-size: 15px;
+    }
+
+
+    .contact-content {
+        flex-direction: column;
+    }
+
+
+    .contact-info,
+    .contact-form-box {
+        width: 100%;
+
+        box-sizing: border-box;
+    }
+
+
+    .contact-form-box {
+        padding: 25px;
+    }
+
+}
+
+
+/* ================================= */
+/* HEADER */
+/* ================================= */
+
+.contact-header {
+    text-align: center;
+
+    margin-bottom: 50px;
+}
+
+
+.contact-label {
+    display: inline-block;
+
+    margin-bottom: 15px;
+
+    color: #7042d8;
+
+    font-size: 14px;
+
+    font-weight: 600;
+
+    letter-spacing: 5px;
+}
+
+
+.contact-header h2 {
+    margin: 0;
+
+    color: #17172a;
+
+    font-size: 48px;
+
+    font-weight: 700;
+}
+
+
+.contact-line {
+    width: 70px;
+
+    height: 4px;
+
+    background-color: #7042d8;
+
+    border-radius: 10px;
+
+    margin: 18px auto 22px;
+}
+
+
+.contact-header > p {
+    margin: 0;
+
+    color: #62627a;
+
+    font-size: 17px;
+
+    line-height: 1.7;
+}
+
+
+/* ================================= */
+/* CONTENT */
+/* ================================= */
+
+.contact-content {
+    display: flex;
+
+    gap: 30px;
+
+    align-items: stretch;
+}
+
+
+/* ================================= */
+/* BAGIAN KIRI */
+/* ================================= */
+
+.contact-info {
+    width: 40%;
+
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 15px;
+}
+
+
+/* ================================= */
+/* CONTACT CARD */
+/* ================================= */
+
+.contact-card {
+    display: flex;
+
+    align-items: center;
+
+    position: relative;
+
+    padding: 24px;
+
+    min-height: 105px;
+
+    background-color: white;
+
+    border: 1px solid #eeeafa;
+
+    border-radius: 14px;
+
+    box-shadow: 0 5px 18px rgba(80, 60, 130, 0.07);
+
+    text-decoration: none;
+
+    transition: all 0.3s ease;
+}
+
+
+.contact-card:hover {
+    transform: translateY(-3px);
+
+    box-shadow: 0 10px 25px rgba(80, 60, 130, 0.12);
+
+    text-decoration: none;
+}
+
+
+/* ================================= */
+/* ICON */
+/* ================================= */
+
+.contact-icon {
+    width: 62px;
+
+    height: 62px;
+
+    min-width: 62px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    margin-right: 20px;
+
+    border-radius: 50%;
+
+    background-color: #f0eaff;
+
+    color: #7042d8;
+
+    font-size: 31px;
+}
+
+
+/* ================================= */
+/* TEXT CARD */
+/* ================================= */
+
+.contact-card-text {
+    flex: 1;
+}
+
+
+.contact-card-text h3 {
+    margin: 0 0 6px;
+
+    color: #17172a;
+
+    font-size: 19px;
+
+    font-weight: 600;
+}
+
+
+.contact-card-text p {
+    margin: 0;
+
+    color: #69697e;
+
+    font-size: 14px;
+}
+
+
+/* ================================= */
+/* ARROW */
+/* ================================= */
+
+.contact-arrow {
+    width: 28px;
+
+    height: 28px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    border-radius: 50%;
+
+    background-color: #d8c5ff;
+
+    color: #7042d8;
+
+    font-size: 24px;
+
+    font-weight: bold;
+}
+
+
+/* ================================= */
+/* NOTE */
+/* ================================= */
+
+.contact-note {
+    display: flex;
+
+    align-items: center;
+
+    padding: 20px 25px;
+
+    margin-top: 5px;
+
+    background-color: #f0eaff;
+
+    border-radius: 14px;
+}
+
+
+.quote {
+    color: #7042d8;
+
+    font-size: 60px;
+
+    font-weight: bold;
+
+    line-height: 1;
+
+    margin-right: 20px;
+}
+
+
+.contact-note p {
+    margin: 0;
+
+    color: #55556d;
+
+    font-size: 14px;
+
+    line-height: 1.7;
+}
+
+
+.contact-note strong {
+    color: #292944;
+}
+
+
+/* ================================= */
+/* FORM BOX */
+/* ================================= */
+
+.contact-form-box {
+    width: 60%;
+
+    padding: 35px 40px;
+
+    background-color: white;
+
+    border: 1px solid #eeeafa;
+
+    border-radius: 16px;
+
+    box-shadow: 0 5px 20px rgba(80, 60, 130, 0.07);
+}
+
+
+/* ================================= */
+/* FORM HEADER */
+/* ================================= */
+
+.form-heading {
+    display: flex;
+
+    align-items: center;
+
+    margin-bottom: 30px;
+}
+
+
+.form-icon {
+    width: 60px;
+
+    height: 60px;
+
+    min-width: 60px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    margin-right: 18px;
+
+    border-radius: 50%;
+
+    background-color: #f0eaff;
+
+    color: #7042d8;
+
+    font-size: 27px;
+}
+
+
+.form-heading h3 {
+    margin: 0 0 5px;
+
+    color: #17172a;
+
+    font-size: 23px;
+}
+
+
+.form-heading p {
+    margin: 0;
+
+    color: #6b6b80;
+
+    font-size: 14px;
+}
+
+
+/* ================================= */
+/* FORM */
+/* ================================= */
+
+.form-group {
+    margin-bottom: 20px;
+}
+
+
+.form-group label {
+    display: block;
+
+    margin-bottom: 8px;
+
+    color: #292944;
+
+    font-size: 15px;
+
+    font-weight: 500;
+}
+
+
+.form-group input,
+.form-group textarea {
+    width: 100%;
+
+    box-sizing: border-box;
+
+    padding: 14px 16px;
+
+    border: 1px solid #dedde7;
+
+    border-radius: 9px;
+
+    outline: none;
+
+    background-color: white;
+
+    color: #333;
+
+    font-family: inherit;
+
+    font-size: 14px;
+
+    transition: 0.3s;
+}
+
+
+.form-group input {
+    height: 52px;
+}
+
+
+.form-group textarea {
+    height: 130px;
+
+    resize: vertical;
+}
+
+
+.form-group input:focus,
+.form-group textarea:focus {
+    border-color: #7042d8;
+
+    box-shadow: 0 0 0 3px rgba(112, 66, 216, 0.08);
+}
+
+
+.form-group input::placeholder,
+.form-group textarea::placeholder {
+    color: #9999aa;
+}
+
+
+/* ================================= */
+/* SEND BUTTON */
+/* ================================= */
+
+.send-button {
+    width: 100%;
+
+    height: 55px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    gap: 10px;
+
+    border: none;
+
+    border-radius: 9px;
+
+    background-color: #7042d8;
+
+    color: white;
+
+    font-family: inherit;
+
+    font-size: 16px;
+
+    font-weight: 600;
+
+    cursor: pointer;
+
+    transition: 0.3s;
+}
+
+
+.send-button:hover {
+    background-color: #5d31bd;
+
+    transform: translateY(-2px);
+
+    box-shadow: 0 7px 15px rgba(112, 66, 216, 0.2);
+}
+
+
+/* ================================= */
+/* RESPONSIVE */
+/* ================================= */
+
+@media (max-width: 768px) {
+
+    .contact {
+        padding: 60px 0;
+    }
+
+
+    .contact-header h2 {
+        font-size: 36px;
+    }
+
+
+    .contact-header > p {
+        font-size: 15px;
+    }
+
+
+    .contact-content {
+        flex-direction: column;
+    }
+
+
+    .contact-info,
+    .contact-form-box {
+        width: 100%;
+
+        box-sizing: border-box;
+    }
+
+
+    .contact-form-box {
+        padding: 25px;
+    }
+
+}
+
+
+/* =========================================
+   FOOTER
+========================================= */
+
+.footer {
+    padding: 20px;
+
+    background-color: #ffe5c7;
+
+    border-top: 1px solid #e5b15c;
+
+    text-align: center;
+
+    font-size: 13px;
+}
+
+.footer p {
+    margin: 0;
+}
+
+
+/* =========================================
+   RESPONSIVE
+========================================= */
+
+@media (max-width: 768px) {
+
+    .navbar-custom {
+        height: auto;
+
+        padding: 10px 0;
+
+        flex-direction: column;
+
+        gap: 15px;
+    }
+
+    .nav-menu {
+        gap: 15px;
+
+        flex-wrap: wrap;
+
+        justify-content: center;
+    }
+
+    .hero {
+        min-height: auto;
+    }
+
+    .hero-content {
+        flex-direction: column;
+
+        text-align: center;
+
+        gap: 25px;
+    }
+
+    .hero-image img {
+        width: 140px;
+        height: 140px;
+    }
+
+    .hero-text h1 {
+        font-size: 28px;
+    }
+
+}
