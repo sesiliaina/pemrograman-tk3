@@ -1,3 +1,7 @@
+<?php
+include "koneksi.php";
+?>
+
 <!DOCTYPE html>
 <html lang="id">
 
@@ -117,80 +121,48 @@
 
             <div class="skills-info">
 
-                <h2>Keahlian</h2>
+    <h2>Keahlian</h2>
 
-                <p class="skills-description">
-                    Keahlian yang saya pelajari dan kembangkan
-                    dalam bidang teknik mekatronika.
+    <p class="skills-description">
+        Keahlian yang saya pelajari dan kembangkan
+        dalam bidang teknik mekatronika.
+    </p>
+
+    <?php
+
+    $query = mysqli_query($conn, "SELECT * FROM keahlian");
+
+    while ($data = mysqli_fetch_assoc($query)) {
+
+    ?>
+
+        <div class="skill-item">
+
+            <div class="skill-icon">
+                <i class="bi <?php echo $data['icon']; ?>"></i>
+            </div>
+
+            <div class="skill-text">
+
+                <h3>
+                    <?php echo $data['nama']; ?>
+                </h3>
+
+                <p>
+                    <?php echo $data['deskripsi']; ?>
                 </p>
 
-
-                <!-- PEMROGRAMAN -->
-                <div class="skill-item">
-
-                    <div class="skill-icon">
-                        <i class="bi bi-code-slash"></i>
-                    </div>
-
-                    <div class="skill-text">
-
-                        <h3>Pemrograman</h3>
-
-                        <p>
-                            Mengembangkan program untuk mendukung
-                            sistem otomasi dan kontrol menggunakan
-                            berbagai bahasa pemrograman.
-                        </p>
-
-                    </div>
-
-                </div>
-
-
-                <!-- OTOMASI & KONTROL -->
-                <div class="skill-item">
-
-                    <div class="skill-icon">
-                        <i class="bi bi-cpu"></i>
-                    </div>
-
-                    <div class="skill-text">
-
-                        <h3>Otomasi &amp; Kontrol</h3>
-
-                        <p>
-                            Mempelajari dan mengembangkan sistem
-                            otomasi menggunakan PLC, sensor,
-                            aktuator, dan sistem kontrol.
-                        </p>
-
-                    </div>
-
-                </div>
-
-
-                <!-- ELEKTRONIKA & ROBOTIKA -->
-                <div class="skill-item">
-
-                    <div class="skill-icon">
-                        <i class="bi bi-robot"></i>
-                    </div>
-
-                    <div class="skill-text">
-
-                        <h3>Elektronika &amp; Robotika</h3>
-
-                        <p>
-                            Merancang dan mengembangkan rangkaian
-                            elektronika serta sistem robotika
-                            sederhana.
-                        </p>
-
-                    </div>
-
-                </div>
-
             </div>
+
+        </div>
+
+    <?php
+
+    }
+
+    ?>
+
+</div>
 
 
             <!-- ============================= -->
@@ -199,90 +171,85 @@
 
             <div class="skills-chart">
 
-                <h3>Tingkat Penguasaan Keahlian</h3>
+    <h3>Tingkat Penguasaan Keahlian</h3>
 
-                <div class="chart-line"></div>
+    <div class="chart-line"></div>
 
+    <div class="chart">
 
-                <div class="chart">
+        <?php
 
-                    <!-- PEMROGRAMAN -->
-                    <div class="chart-row">
+        $query = mysqli_query($conn, "
+            SELECT 
+                keahlian.nama,
+                tingkat_keahlian.keahlian_id,
+                tingkat_keahlian.presentase
+            FROM tingkat_keahlian
+            INNER JOIN keahlian 
+                ON tingkat_keahlian.keahlian_id = keahlian.id
+            ORDER BY tingkat_keahlian.keahlian_id ASC
+        ");
 
-                        <div class="chart-label">
-                            Pemrograman
-                        </div>
+        while ($data = mysqli_fetch_assoc($query)) {
 
-                        <div class="chart-area">
+            // Menentukan class warna berdasarkan keahlian
+            if ($data['keahlian_id'] == 1) {
+                $bar_class = "programming-bar";
+            } elseif ($data['keahlian_id'] == 2) {
+                $bar_class = "automation-bar";
+            } else {
+                $bar_class = "robotics-bar";
+            }
 
-                            <div class="chart-bar programming-bar">
-                                <span>70%</span>
-                            </div>
+        ?>
 
-                        </div>
+            <div class="chart-row">
 
+                <div class="chart-label">
+                    <?php echo $data['nama']; ?>
+                </div>
+
+                <div class="chart-area">
+
+                    <div 
+                        class="chart-bar <?php echo $bar_class; ?>"
+                        style="width: <?php echo $data['presentase']; ?>%;"
+                    >
+                        <span>
+                            <?php echo $data['presentase']; ?>%
+                        </span>
                     </div>
-
-
-                    <!-- OTOMASI -->
-                    <div class="chart-row">
-
-                        <div class="chart-label">
-                            Otomasi &amp; Kontrol
-                        </div>
-
-                        <div class="chart-area">
-
-                            <div class="chart-bar automation-bar">
-                                <span>80%</span>
-                            </div>
-
-                        </div>
-
-                    </div>
-
-
-                    <!-- ELEKTRONIKA -->
-                    <div class="chart-row">
-
-                        <div class="chart-label">
-                            Elektronika &amp; Robotika
-                        </div>
-
-                        <div class="chart-area">
-
-                            <div class="chart-bar robotics-bar">
-                                <span>75%</span>
-                            </div>
-
-                        </div>
-
-                    </div>
-
-
-                    <!-- ANGKA GRAFIK -->
-                    <div class="chart-scale">
-
-                        <span>0</span>
-                        <span>20</span>
-                        <span>40</span>
-                        <span>60</span>
-                        <span>80</span>
-                        <span>100</span>
-
-                    </div>
-
-                    <p class="chart-axis">
-                        Persentase (%)
-                    </p>
 
                 </div>
 
             </div>
 
+        <?php
+
+        }
+
+        ?>
+
+
+        <!-- ANGKA GRAFIK -->
+        <div class="chart-scale">
+
+            <span>0</span>
+            <span>20</span>
+            <span>40</span>
+            <span>60</span>
+            <span>80</span>
+            <span>100</span>
+
         </div>
 
+        <p class="chart-axis">
+            Presentase (%)
+        </p>
+
     </div>
+
+</div>
 
 </section>
     <!-- ================= ABOUT ================= -->
